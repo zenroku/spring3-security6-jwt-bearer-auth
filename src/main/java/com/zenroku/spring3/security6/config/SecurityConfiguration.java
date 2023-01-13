@@ -25,7 +25,7 @@ public class SecurityConfiguration {
                 .csrf().disable()
                 // 2. we set all permitted first until line 29 with requestMatchers pattern to whitelist endpoints
                 .authorizeHttpRequests()
-                .requestMatchers("")
+                .requestMatchers("/api/v1/auth/**")
                 .permitAll()
                 // but the others request must be authenticated
                 .anyRequest()
